@@ -1,0 +1,23 @@
+{
+  "name": "niva-glow-platform",
+  "version": "1.0.0",
+  "description": "AI WhatsApp Sales & Support OS for D2C brands in India",
+  "private": true,
+  "workspaces": [
+    "src/api",
+    "src/web"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run dev --workspace=src/api",
+    "dev:web": "npm run dev --workspace=src/web",
+    "build": "npm run build --workspace=src/api && npm run build --workspace=src/web",
+    "start": "npm run start --workspace=src/api && npm run start --workspace=src/web",
+    "test": "npm test --workspace=src/api && npm test --workspace=src/web",
+    "lint": "npm run lint --workspace=src/api && npm run lint --workspace=src/web"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
